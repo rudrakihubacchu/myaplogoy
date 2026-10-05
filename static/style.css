@@ -1,108 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400&display=swap');
+/* --- NEW STYLES ADDED BELOW --- */
 
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-}
-
-.content {
-    z-index: 10;
-    position: relative;
-    padding: 20px;
-}
-
-h1, h2 {
-    font-family: 'Dancing Script', cursive;
-    color: #d81b60;
-    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
-}
-
-h1 {
-    font-size: 4.5rem;
-}
-
-h2 {
-    font-size: 3.5rem;
-}
-
-p {
-    font-size: 1.5rem;
-    color: #ad1457;
-    font-weight: 500;
-}
-
-/* Smooth Fade Animations */
-.hidden {
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-    transition: all 1.5s ease-in-out;
-}
-
-.show {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-}
-
-/* Falling Animation for JS elements */
-.falling-item {
+/* Upload Button Styles */
+#upload-container {
     position: absolute;
-    top: -10vh;
-    animation: fall linear infinite;
-    user-select: none;
-    z-index: 1;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
 }
 
-@keyframes fall {
+#video-upload {
+    display: none; /* Hide default file input */
+}
+
+#upload-label {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #ad1457;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+#upload-label:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Glowing Text Animation */
+.glow-text {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff3366, 0 0 10px #ff3366, 0 0 20px #ff3366, 0 0 40px #ff3366;
+    animation: glow 1s infinite alternate;
+    cursor: pointer;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #ff3366, 0 0 10px #ff3366, 0 0 20px #ff3366;
+    }
     to {
-        transform: translateY(110vh) rotate(360deg);
+        text-shadow: 0 0 10px #ff3366, 0 0 20px #ff3366, 0 0 30px #ff3366, 0 0 50px #ff3366;
     }
 }
 
-/* Beating Heart Animation */
-.heart {
-    width: 60px;
-    height: 60px;
-    background-color: #ff3366;
-    position: relative;
-    transform: rotate(-45deg);
-    margin: 40px auto;
-    animation: heartbeat 1.2s infinite;
-    box-shadow: 0 0 20px rgba(255, 51, 102, 0.6);
+/* Clickable Heart */
+#clickable-heart {
+    cursor: pointer;
+    z-index: 20;
 }
 
-.heart::before,
-.heart::after {
-    content: "";
-    width: 60px;
-    height: 60px;
-    background-color: #ff3366;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.heart::before {
-    top: -30px;
-    left: 0;
-}
-
-.heart::after {
+/* Fullscreen Video Overlay */
+#video-overlay {
+    position: fixed;
     top: 0;
-    left: 30px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes heartbeat {
-    0% { transform: scale(1) rotate(-45deg); }
-    20% { transform: scale(1.25) rotate(-45deg); }
-    40% { transform: scale(1) rotate(-45deg); }
-    60% { transform: scale(1.15) rotate(-45deg); }
-    80% { transform: scale(1) rotate(-45deg); }
-    100% { transform: scale(1) rotate(-45deg); }
+/* Autofill according to frame */
+#apology-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes it fill the screen completely */
+}
+
+/* Close Video Button */
+#close-video {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 101;
 }
