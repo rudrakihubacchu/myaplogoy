@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- Video Upload Button at the Top -->
+    <div id="upload-container">
+        <input type="file" id="video-upload" accept="video/*">
+        <label for="video-upload" id="upload-label">Upload Video 📁</label>
+    </div>
+
     <!-- Container for falling flowers and hearts -->
     <div id="flower-container"></div>
     
@@ -17,8 +23,16 @@
         <div id="apology-box" class="hidden" style="display: none;">
             <h2>I am really sorry!</h2>
             <p>Please smile now, it breaks my heart to see you angry. 🌸</p>
-            <div class="heart"></div>
+            <div class="heart" id="clickable-heart"></div>
+            <!-- Glowing text -->
+            <p id="click-instruction" class="glow-text">Click the heart ✨</p>
         </div>
+    </div>
+
+    <!-- Fullscreen Video Overlay -->
+    <div id="video-overlay" style="display: none;">
+        <video id="apology-video" playsinline></video>
+        <button id="close-video">✖</button>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
