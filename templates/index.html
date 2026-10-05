@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Himu ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Container for falling flowers and hearts -->
+    <div id="flower-container"></div>
+    
+    <div class="content">
+        <h1 id="text1" class="hidden">Hey meri gudiya raani himu... ❤️</h1>
+        <h2 id="text2" class="hidden" style="display: none;">Gussa kiu ho baccha? 🥺</h2>
+        
+        <div id="apology-box" class="hidden" style="display: none;">
+            <h2>I am really sorry!</h2>
+            <p>Please smile now, it breaks my heart to see you angry. 🌸</p>
+            <div class="heart"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
